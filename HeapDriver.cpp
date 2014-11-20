@@ -1,6 +1,6 @@
-#include "HeapArray.h"
+//#include "HeapArray.h"
 #include "HeapSkew.h"
-#include "PQHeap.h"
+//#include "PQHeap.h"
 #include "CD.h"
 using CSC2110::CD;
 #include "Text.h"
@@ -32,8 +32,8 @@ int main()
    int num_items = cds->size();
    cout << num_items << endl;
 
-//while(true)
-//{
+while(true)
+{
    HeapSkew<CD>* sh = new HeapSkew<CD>(&CD::compare_items);
 
    ListArrayIterator<CD>* iter = cds->iterator();
@@ -44,14 +44,14 @@ int main()
    }
    delete iter;
 
-   while(!(sh->heapIsEmpty()))
+   /*while(!(sh->heapIsEmpty()))
    {
       CD* cd = sh->heapRemove();
       cd->displayCD();
-   }
+   }*/
 
    delete sh;
-//}
+}
    deleteCDs(cds);
    delete cds;
 
